@@ -1,0 +1,9 @@
+---
+- name: Install OpenSSH server
+  command: "apt install openssh-server"
+
+- name: Autoload SSH server
+  command: "systemctl enable ssh"
+
+- name: Ensure SSH server is up and running
+  command: "systemctl status ssh"

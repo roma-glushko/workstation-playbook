@@ -1,0 +1,3 @@
+---
+- name: Create projects directory
+  command: "mkdir ~/projects"

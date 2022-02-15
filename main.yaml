@@ -1,0 +1,21 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  tasks:
+    - import_tasks: tasks/ssh-server.yaml
+      tags: ['ssh-access']
+
+    - import_tasks: tasks/python.yaml
+      tags: ['environment']
+
+    - import_tasks: tasks/disable-sleep.yaml
+      tags: ['ssh-access']
+
+    - import_tasks: tasks/cuda.yaml
+      tags: ['environment']
+
+    - import_tasks: tasks/workspace.yaml
+      tags: [ 'environment' ]
